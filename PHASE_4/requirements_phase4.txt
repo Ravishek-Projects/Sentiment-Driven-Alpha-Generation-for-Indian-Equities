@@ -1,0 +1,9 @@
+# Phase 4 — Dashboard and P&L Tracking
+# Install on top of Phases 1-3 requirements.
+
+streamlit==1.35.0
+plotly==5.22.0
+streamlit-autorefresh==1.0.1
+
+# Already installed in earlier phases — listed for reference:
+# duckdb, pandas, numpy, APScheduler
