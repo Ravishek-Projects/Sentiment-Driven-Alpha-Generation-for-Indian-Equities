@@ -1,0 +1,28 @@
+# Phase 2 — Feature Engineering
+# Install on top of Phase 1 requirements.txt
+
+# Deep learning framework
+torch==2.3.0                  # CPU-only build is fine; GPU install: see note below
+torchvision==0.18.0           # required by some torch builds
+
+# HuggingFace ecosystem
+transformers==4.41.1
+tokenizers==0.19.1
+huggingface-hub==0.23.2
+safetensors==0.4.3
+accelerate==0.30.1            # speeds up model loading
+
+# Sentencepiece (required by some tokenisers)
+sentencepiece==0.2.0
+
+# Already in Phase 1 requirements — listed here for completeness
+# duckdb, pandas, numpy, APScheduler, pytz
+
+# ─── GPU note ─────────────────────────────────────────────────────────────
+# The default torch pip install is CPU-only.
+# For CUDA 12.1 (most modern NVIDIA cards):
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# Check your CUDA version first: nvidia-smi
+# Then pick the right wheel from https://pytorch.org/get-started/locally/
