@@ -1,3 +1,21 @@
+# Project Description: Sentiment-Driven Return Prediction on Nifty50 Stocks
+## Overview
+This project presents an end-to-end, machine learning-driven algorithmic trading pipeline designed to predict the next-day returns of Nifty50 stocks. By combining natural language processing (NLP) of financial news headlines with quantitative technical indicators, the system forecasts equity price movements. 
+Unlike many academic implementations that rely on static, pre-packaged datasets, this project features a fully automated, production-grade ingestion and processing pipeline that operates on live data.
+
+## System Architecture
+The project is structured into a modular, three-phase pipeline:
+* **Phase 1: Automated Data Ingestion & Processing**
+  A live scheduling system that fetches financial news from 9 major Indian RSS feeds (e.g., ET Markets, MoneyControl, Mint) every 30 minutes. It handles real-time deduplication using MinHash LSH, applies NSE market calendar rules to assign trading dates, and tags articles to specific Nifty50 tickers using FlashText. It also automatically tops up daily OHLCV price data from Yahoo Finance.
+* **Phase 2: Feature Engineering & Sentiment Analysis**
+  Applies the FinBERT language model to extract financial sentiment (positive/negative/neutral probabilities) from the ingested headlines. It combines these sentiment scores with quantitative momentum and volatility metrics to generate a dense, 17-dimensional feature vector per stock, per day.
+* **Phase 3: Predictive Modeling (Deep Learning)**
+  An ensemble modeling approach utilizing Long Short-Term Memory (LSTM) networks and Transformer encoder architectures. The models are trained using a custom directional loss function optimized specifically to predict next-day Close-to-Open returns, rather than minimizing generic regression errors.
+* **Phase 4: Target Refinement:**
+ Shifting the target variable strictly to "Close-to-Open" overnight returns to capture the immediate impact of after-hours news.
+* **Phase 5: Dataset Expansion:**
+ Scaling the pipeline from the Nifty50 to the Nifty500 to increase the training dataset size tenfold, allowing the complex neural networks to generalize better across different market sectors and volatility regimes.
+
 # Phase 1 — RSS Ingestion Pipeline
 ## Setup and Run Guide
 
