@@ -1,0 +1,8 @@
+# Phase 5 — Evaluation, Monitoring, and Retraining
+# Install on top of Phases 1-4 requirements.
+
+scipy==1.13.1          # statistical tests (DM test, t-test, KL divergence)
+matplotlib==3.9.0      # charts in HTML report (optional but recommended)
+
+# Already installed — listed for reference:
+# torch, transformers, scikit-learn, duckdb, pandas, numpy, APScheduler
