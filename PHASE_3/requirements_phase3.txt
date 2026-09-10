@@ -1,0 +1,12 @@
+# Phase 3 — Model Training and Inference
+# Install on top of Phase 1 + Phase 2 requirements.
+
+# Deep learning — already in Phase 2, listed for completeness
+torch==2.3.0
+torchvision==0.18.0
+
+# ML utilities
+scikit-learn==1.5.0          # RobustScaler, metrics
+
+# Already present from Phase 1/2
+# pandas, numpy, duckdb, APScheduler
